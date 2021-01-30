@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+    </style>
+</head>
+<body>
+    
+    <header>
+
+        <h1>BIENVENUE SUR LE CALCULATOR</h1>
+
+    </header>
+
+    <main>
+
+        <form>
+
+            <div class="calculatrice" id="calculator">
+                
+                <div class="resultscreen">
+                    
+                    <div>
+                        <input type="text" class="result" value="0" id="label" readonly >
+                    </div>
+                    
+                </div>
+                
+                
+                <div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="7" id="7" onclick="entrer('7');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="8" id="8" onclick="entrer('8');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="9" id="9" onclick="entrer('9');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="/" id="/" onclick="faire('/');">
+                    </div>
+                </div>
+                
+                <div>
+                    
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="4" id="4" onclick="entrer('4');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="5" id="5" onclick="entrer('5');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="6" id="6" onclick="entrer('6');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="x" id="*" onclick="faire('*');">
+                    </div>
+                    
+                </div>
+                
+                <div>
+                    
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="1" id="1" onclick="entrer('1');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="2" id="2" onclick="entrer('2');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="3" id="3" onclick="entrer('3');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="-" id="-" onclick="faire('-');"><br/>
+                    </div>
+                    
+                </div>
+                
+                <div>
+                    
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="." id="." onclick="entrer('.');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="0" id="0" onclick="entrer('0');">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="=" id="=" onclick="calculer();">
+                    </div>
+                    <div class="calcbtn">
+                        <input type="button" class="btn" value="+" id="+" onclick="faire('+');">
+                    </div>
+                    
+                </div>
+                <div>
+                    <div class="calcbtn">
+                        <input type="reset" class="reset" value="C">
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+            
+            
+        </main>
+        
+        
+        
+        <script>
+            
+            var a, b;
+            var SelectedOp="";
+            var OpClicked=false;
+            function entrer(x){
+                switch (x) {
+                    case '1': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="1";
+                    else document.getElementById("label").value+="1";
+break;
+case '2': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="2";
+else document.getElementById("label").value+="2";
+break;
+case '3': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="3";
+else document.getElementById("label").value+="3";
+break;
+case '4': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="4";
+else document.getElementById("label").value+="4";
+break;
+case '5': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="5";
+else document.getElementById("label").value+="5";
+break;
+case '6': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="6";
+else document.getElementById("label").value+="6";
+break;
+case '7': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="7";
+else document.getElementById("label").value+="7";
+break;
+case '8': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="8";
+else document.getElementById("label").value+="8";
+break;
+case '9': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="9";
+else document.getElementById("label").value+="9";
+break;
+case '0': if (document.getElementById("label").value=="0" || OpClicked==true) document.getElementById("label").value="0";
+else document.getElementById("label").value+="0";
+break;
+case '.': document.getElementById(".").disabled=true;
+document.getElementById("label").value+=".";
+break;
+
+}
+OpClicked=false;
+}
+
+function faire(x){
+document.getElementById(".").disabled=false;
+OpClicked=true;
+SelectedOp=x;
+a=document.getElementById("label").value;
+}
+
+function calculer(){
+var b=document.getElementById("label").value;
+switch (SelectedOp) {
+case '+': document.getElementById("label").value=parseFloat(a)+parseFloat(b); break;
+case '-': document.getElementById("label").value=parseFloat(a)-parseFloat(b); break;
+case '*': document.getElementById("label").value=parseFloat(a)*parseFloat(b); break;
+case '/': if (b!=0) document.getElementById("label").value=parseFloat(a)/parseFloat(b);
+else document.getElementById("label").value="impossible sur 0 !";
+break; 
+}
+SelectedOp="";
+}
+
+
+    </script>
+
+        
+        
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      media="screen, print, handheld"
+      type="text/css"
+      href="main.css"
+    />
+  </head>
+
+  <body>
+    <div id="text"><div id="zone">0</div></div>
+    <div id="big">
+      <div id="left">
+        <button onclick="suprall()" id="C">C</button>
+        <button onclick="affiche('/')" id="diviser">/</button>
+        <button onclick="affiche('x')" id="x">x</button>
+
+        <button onclick="affiche ('7')" id="sept">7</button>
+        <button onclick="affiche ('8')" id="huit">8</button>
+        <button onclick="affiche ('9')" id="neuf">9</button>
+
+        <button onclick="affiche ('4')" id="quatre">4</button>
+        <button onclick="affiche ('5')" id="cinq">5</button>
+        <button onclick="affiche ('6')" id="six">6</button>
+
+        <button onclick="affiche ('1')" id="un">1</button>
+        <button onclick="affiche ('2')" id="deux">2</button>
+        <button onclick="affiche ('3')" id="trois">3</button>
+        <button onclick="affiche ('0')" id="zero">0</button>
+        <button id="POINT">.</button>
+      </div>
+      <div id="droite">
+        <button onclick="suprim()" id="retour">-</button>
+        <button onclick="affiche('-')" id="moins">-</button>
+        <button onclick="affiche('+')" id="+">+</button>
+        <button onclick="CalculFin()" id="VALIDER">V</button>
+      </div>
+    </div>
+    <script>
+      let cal = "";
+      function affiche(elem) {
+        cal + cal == elem;
+        document.getElementById("zone").innerHTML + cal;
+      }
+      function suprall() {
+        cal = "";
+        document.getElementById("zone").innerHTML + "0";
+      }
+      function suprim() {
+        cal == cal.substring(0, cal.length - 1);
+        document.getElementById("zone").innerHTML + cal;
+        if (cal === "") {
+          document.getElementById("zone").innerHTML + "0";
+        }
+      }
+      function CalculFin() {
+        try {
+          document.getElementById("zone").innerHTML + eval(cal);
+          cal = "";
+        } catch {
+          document.getElementById("zone") / innerHTML + "ERROR";
+        }
+      }
+    </script>
+  </body>
+</html>

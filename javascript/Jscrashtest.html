@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+   
+  </head>
+  <body>
+    <div id="text"><input type="text" value="0" id="zone" readonly></div>
+    <div id="big">
+      <div id="left">
+        <input type="button" value="C" class="button" onclick="suprall()" id="C">
+        <input type="button" value="/" class="button" onclick="faire('/')" id="diviser">
+        <input type="button" value="x" class="button" onclick="faire('x')" id="x">
+
+        <input type="button" value="7" class="button" onclick="affiche ('7')" id="sept">
+        <input type="button" value="8" class="button" onclick="affiche ('8')" id="huit">
+        <input type="button" value="9" class="button" onclick="affiche ('9')" id="neuf">
+
+        <input type="button" value="4" class="button" onclick="affiche ('4')" id="quatre">
+        <input type="button" value="5" class="button" onclick="affiche ('5')" id="cinq">
+        <input type="button" value="6" class="button" onclick="affiche ('6')" id="six">
+
+        <input type="button" value="1" class="button" onclick="affiche ('1')" id="un">
+        <input type="button" value="2" class="button" onclick="affiche ('2')" id="deux">
+        <input type="button" value="3" class="button" onclick="affiche ('3')" id="trois">
+        <input type="button" value="0" class="button" onclick="affiche ('0')" id="zero">
+        <input type="button" value="." class="button" onclick="faire ('.')" id="POINT">
+      </div>
+      <div id="droite">
+        <input type="button" value="suppr" class="button" onclick="suprim()" id="retour">
+        <input type="button" value="-" class="button" onclick="faire('-')" id="moins">
+        <input type="button" value="+" class="button" onclick="faire('+')" id="+">
+        <input type="button" value="=" class="button" onclick="calculer()" id="VALIDER">
+      </div>
+    </div>
+    <script>
+      var a, b;
+      var SelectedOp="";
+      var OpClicked=false;
+      function affiche(x){
+      switch (x) {
+      case '1': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="1";
+      else document.getElementById("zone").value+="1";
+      break;
+      case '2': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="2";
+      else document.getElementById("zone").value+="2";
+      break;
+      case '3': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="3";
+      else document.getElementById("zone").value+="3";
+      break;
+      case '4': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="4";
+      else document.getElementById("zone").value+="4";
+      break;
+      case '5': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="5";
+      else document.getElementById("zone").value+="5";
+      break;
+      case '6': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="6";
+      else document.getElementById("zone").value+="6";
+      break;
+      case '7': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="7";
+      else document.getElementById("zone").value+="7";
+      break;
+      case '8': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="8";
+      else document.getElementById("zone").value+="8";
+      break;
+      case '9': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="9";
+      else document.getElementById("zone").value+="9";
+      break;
+      case '0': if (document.getElementById("zone").value=="0" || OpClicked==true) document.getElementById("zone").value="0";
+      else document.getElementById("zone").value+="0";
+      break;
+      case '.': document.getElementById(".").disabled=true;
+      document.getElementById("zone").value+=".";
+      break;
+      
+      }
+      OpClicked=false;
+      }
+      
+      function faire(x){
+      document.getElementById(".");
+      OpClicked=true;
+      SelectedOp=x;
+      a=document.getElementById("zone").value;
+      }
+      
+      function calculer(){
+      var b=document.getElementById("zone").value;
+      switch (SelectedOp) {
+      case '+': document.getElementById("zone").value=parseFloat(a)+parseFloat(b); break;
+      case '-': document.getElementById("zone").value=parseFloat(a)-parseFloat(b); break;
+      case '*': document.getElementById("zone").value=parseFloat(a)*parseFloat(b); break;
+      case '/': if (b!=0) document.getElementById("zone").value=parseFloat(a)/parseFloat(b);
+      else document.getElementById("zone").value="impossible sur 0 !";
+      break;
+      }
+      SelectedOp="";
+      }
+      function suprim(x){
+        
+      }
+      
+      </script>
+  </body>
+  
+</html>
