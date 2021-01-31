@@ -1,72 +1,112 @@
-#droite{
-    
+main {
+    max-width: 800px;
+    min-width: 300px;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    border: thin solid black;
+    border-radius: 5px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+h1 {
+    text-align: center;
+}
+
+section.resultscreen {
+    margin-bottom: 2rem;
+}
+
+input.result {
+    width: 100%;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#droite {
+
     width: 60px;
     height: AUTO;
-    
+
 }
-#valider{
+
+#valider {
     width: 60px;
 }
-#left{
+
+#left {
     width: 204px;
     height: 100%;
 }
-.button{
+
+.button {
     border-style: groove;
     border-radius: 5px;
     border-color: rgb(14, 14, 14);
     color: white;
-    background-color:rgb(66, 66, 66) ;
+    background-color: rgb(66, 66, 66);
     width: 60px;
     height: 60px;
-    margin:2px
+    margin: 2px
 }
-.button:hover{
+
+.button:hover {
     background-color: gray;
     transition-duration: 150ms;
 }
-#zero{
-    width:128px
+
+#zero {
+    width: 128px
 }
-#VALIDER{
-    height:124px
+
+#VALIDER {
+    height: 124px
 }
-#big{
+
+#big {
     width: 269px;
-    display:flex;
+    display: flex;
     background-color: rgb(36, 36, 104);
     padding: 10PX;
-    border-bottom-left-radius:10px ;
-    border-bottom-right-radius:10px;
-    border-style:groove;
-    border-top-style:none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-style: groove;
+    border-top-style: none;
     border-width: 2px;
     border-color: Black;
 }
 
-#text{
+#text {
     height: 60px;
-    width:269px;
+    width: 269px;
     background: rgb(36, 36, 104);
     padding: 10px;
-    border-style:groove;
-    border-bottom-style:none ;
+    border-style: groove;
+    border-bottom-style: none;
     border-color: Black;
     border-width: 2px;
-    border-top-left-radius: 10px ;
-    border-top-right-radius: 10px ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
-#resultat{
-    height:40px;
+
+#resultat {
+    height: 40px;
     width: 246px;
     padding: 10px;
 
 }
-#zone{
-    width:240px;
-    height:40px;
+
+#zone {
+    width: 240px;
+    height: 40px;
     background-color: white;
-    border-style:groove;
+    border-style: groove;
     border-width: 2px;
     border-color: black;
     padding: 13px;
